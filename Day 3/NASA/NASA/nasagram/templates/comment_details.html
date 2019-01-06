@@ -1,0 +1,19 @@
+
+<img src="{{ comment_details.url }}"/>
+
+<form method="POST">
+
+
+{% csrf_token %}
+
+<p>
+    {{comment_details.comment}}
+
+    <div>
+        {{comment_details.rating}}
+    </div>
+    
+
+    
+</p>
+</form>

@@ -4,6 +4,8 @@ from django.views.generic import CreateView, DetailView, UpdateView, ListView, D
 from findpet.forms.forms import descriptionForm
 from findpet.models import pet
 from django.urls import reverse_lazy
+from django.http import HttpResponse
+from django.core import serializers
 
 
 # Create your views here.
@@ -46,3 +48,7 @@ class map(TemplateView):
     model = pet
     template_name = 'map.html'
 
+def animal_list_api(request, map_id):
+    html = pet.objects.all()
+    data = serializers.serialize("json", html)
+    return HttpResponse(data)

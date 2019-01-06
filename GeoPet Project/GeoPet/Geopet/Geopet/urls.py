@@ -27,6 +27,6 @@ urlpatterns = [
     path('geopet/update/<int:pk>', views.descriptionUpdateView.as_view(), name = 'update'),
     path('geopet/delete/<int:pk>', views.descriptionDeleteView.as_view(), name = 'delete'),
     path('geopet/map', views.map.as_view()),
-    path('geopet/<int:map_id', views.map_view),
+    path('geopet/api/<int:map_id>', views.animal_list_api),
    
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -4,7 +4,43 @@
 
 {% for pet in object_list %}
 
-{{ pet }}
+    <div class="row">
+            <div class="col s12 m7">
+            <div class="card">
+                <div class="card-image">
+                <img src= "/media/{{ pet.image }}">
+                </div>
+                <div class="card-content">
+                <p>
+
+                    <div><b>
+                        Information given:
+                    </div></b>
+                    
+                    {{ pet.description }}
+
+                    <div><b>
+                        Date posted:
+                    </div></b>
+
+                    <div>
+                        {{ pet.date_published }}
+                    </div>
+
+                    <b>Latitude and longitude:</b>
+                    <div>
+                        {{ pet.lat}}, {{ pet.lng }}
+                    </div>
+
+                </p>
+                </div>
+                <div class="card-action">
+                <a href="/geopet/post_created/{{pet.id}}">Come Find Me!</a>
+                </div>
+            </div>
+            </div>
+        </div>
+
 
 {% endfor %}
 
